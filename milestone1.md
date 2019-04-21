@@ -25,3 +25,14 @@
 ![Prototype 2-4](https://github.com/henrywuo/VVrecipe/blob/master/prototype2-4.jpg)
 ![Prototype 2-5](https://github.com/henrywuo/VVrecipe/blob/master/prototype2-5.jpg)
 ![Prototype 2-6](https://github.com/henrywuo/VVrecipe/blob/master/prototype2-6.jpg)
+
+## Storyboard 1
+<p> Story of how Bob has trouble with recipe sites and books because they don't seperate between vegan and vegetarians
+
+![Storyboard 1](https://github.com/henrywuo/VVrecipe/blob/master/storyboard1.jpg)
+
+## Storyboard 2
+<p> Story of how Bob has trouble with not having much variety and only eating tofu everyday and how it was solve by our website
+
+![Storyboard 2](https://github.com/henrywuo/VVrecipe/blob/master/storyboard2.jpg)
+  
