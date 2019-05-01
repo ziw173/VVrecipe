@@ -27,6 +27,7 @@ What we actually wanted on the web basically became different from what we wante
 
 ![Recipe](https://github.com/aaerok/Milestone-2/blob/master/Recipe1.jpg)
 ![Profile](https://github.com/aaerok/Milestone-2/blob/master/profile.jpg)
+![signon/login](https://github.com/aaerok/Milestone-2/blob/master/signup-login.jpg)
 
 ![files1](https://github.com/aaerok/Milestone-2/blob/master/ms2md-2.JPG)
 ![files2](https://github.com/aaerok/Milestone-2/blob/master/ms2md-2-2.JPG)
