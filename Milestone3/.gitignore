@@ -1,0 +1,8 @@
+# dependencies
+/node_modules
+
+/models
+
+package-lock.json
+
+.DS_Store

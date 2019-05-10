@@ -1,0 +1,173 @@
+<!-- index.ejs -->
+<html>
+
+<head>
+    <% include ./partials/header.ejs %>
+    <script type="text/javascript" src="/js/home.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class='home-container'>
+        <% include ./partials/navbar.ejs %>
+
+        <h2 class="titles">This Weeks Top Recipe</h2>
+        <div class="home-image"></div>
+
+        <div class="row">
+
+            <div class="column">
+                <img src="https://www.godairyfree.org/wp-content/uploads/2012/09/peruvianavocados.jpg" alt="Food"
+                    class="image" style="width:50%">
+                <div class="middle">
+                    <div class="text">
+                        <h1>Stuffed Avocado <h4>FOR: Vegans, Vegetarians</h4>
+                            <h4>Ratings:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </h4>
+                        </h1>
+                        <h2>Ingredients</h2>
+                        <p>advocado <br> more avocado <br> eggs <br> quinoa <br> tomatoes <br>
+                            onions <br> cilantro <br> olive oil
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="column">
+                <img src="https://www.rachelcooks.com/wp-content/uploads/2018/01/shrimp-tacos-avocado-mango-salsa-web-5-of-12-600x550.jpg"
+                    alt="Food" class="image" style="width:50%">
+                <div class="middle">
+                    <div class="text">
+                        <h1>Shrimp Avocado Tacos <h4>FOR: Vegetarians</h4>
+                            <h4>Ratings:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </h4>
+                        </h1>
+                        <h2>Ingredients</h2>
+                        <p>advocados <br>shrimp <br> pineapple <br>
+                            onions <br> cilantro <br> olive oil
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <img src="https://ik2oa1wlcj46xaafvt85daad-wpengine.netdna-ssl.com/wp-content/uploads/2019/01/Waldorf-Salad-600x550.png"
+                    alt="Food" class="image" style="width:50%">
+                <div class="middle">
+                    <div class="text">
+                        <h1>Mysterious Vegan Salad <h4>FOR: Vegans, Vegetarians</h4>
+                            <h4>Ratings:
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </h4>
+                        </h1>
+                        <h2>Ingredients</h2>
+                        <p>advocado <br>pepper <br> apple <br>
+                            lettuce <br> walnut <br> soy cheese <br> vinaigrette
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="previous round">&#8249;</a>
+        <a href="#" class="next round">&#8250;</a>
+
+        <div class='search-recipe'>
+            <input id="search-box" type="text" size="20" />
+            <button id="recipe-button">Search Food</button>
+            <div id='food-title'></div>
+            <img id='food-pic'></img>
+        </div>
+        <div id='home-padding'></div>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Upload Recipe</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create a Recipe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <div class="modal-body">
+                        <!-- <form action='/postRecipe' method="POST">
+                            <button type='submit'>POST</button>
+                        </form> -->
+                    <form action='/postRecipe' method="POST">
+                        <div class="form-group">
+                            <input type="file" name="pic" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message</label>
+                            <textarea name="message" class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="form-group" id="recipe-form">
+                            <label for="message-text" class="col-form-label">Recipe Steps</label>
+                            <div id="instructions">
+                                <input type="text" name="instructions[]">
+                            </div>
+                            <button class='btn btn-success add-recipe-button' type='button'><b>+</b></button>
+                            <button class='btn btn-danger delete-recipe-button' type='button'><b>-</b></button>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tags</label>
+                            <input name="tags" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" value='postRecipe' class="recipe-post-button btn btn-primary">Post</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="disccussion">
+            <form action="">
+                <label for="comment">Comment</label>
+                <input type="text" id="comment" name="comments" placeholder="Your Review...">
+
+                <label for="diet">Your Diet</label>
+                <select id="diet" name="Diet">
+                    <option value="vegan">Vegan</option>
+                    <option value="vegetarian">Vegetarian</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div>
+            <form action="">
+                <label for="recipeSubmission">Recipe Submission</label>
+                <input type="text" id="recipeSubmission" name="submission" placeholder="Share your recipe...">
+
+                <button type="button" onclick="alert('This should submit Recipe Picture')">Upload Recipe Picture</button>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        
+        <% include ./partials/footer.ejs %>
+    </div>
+</body>
+
+</html>
