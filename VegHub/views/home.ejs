@@ -3,18 +3,20 @@
 
 <head>
     <% include ./partials/header.ejs %>
+    <link rel='stylesheet' type="text/css" href='/css/home.css'>
     <script type="text/javascript" src="/js/home.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <div class='home-container'>
-        <% include ./partials/navbar.ejs %>
+    <% include ./partials/navbar.ejs %>
 
+    <div class='home-container'>
         <h2 class="titles">This Weeks Top Recipe</h2>
         <div class="home-image"></div>
 
-        <div class="row">
+        <div class="row"
+            style="background:url(https://foodrevolution.org/wp-content/uploads/2018/09/blog-featured-rawvscooked-20180905.jpg)">
 
             <div class="column">
                 <img src="https://www.godairyfree.org/wp-content/uploads/2012/09/peruvianavocados.jpg" alt="Food"
@@ -90,61 +92,80 @@
 
         <div class='search-recipe'>
             <input id="search-box" type="text" size="20" />
+            <img id='search-box-img' src="" />
             <button id="recipe-button">Search Food</button>
             <div id='food-title'></div>
-            <img id='food-pic'></img>
         </div>
+
         <div id='home-padding'></div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Upload Recipe</button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo">Upload Recipe</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Create a Recipe</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                <div class="modal-body">
-                        <!-- <form action='/postRecipe' method="POST">
-                            <button type='submit'>POST</button>
-                        </form> -->
-                    <form action='/postRecipe' method="POST">
-                        <div class="form-group">
-                            <input type="file" name="pic" accept="image/*">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message</label>
-                            <textarea name="message" class="form-control" id="message-text"></textarea>
-                        </div>
-                        <div class="form-group" id="recipe-form">
-                            <label for="message-text" class="col-form-label">Recipe Steps</label>
-                            <div id="instructions">
-                                <input type="text" name="instructions[]">
+                    <div class="modal-body">
+                        <form action='/upload' enctype="multipart/form-data" method="POST">
+                            <div class="form-group">
+                                <label for="name-text" class="col-form-label">Name</label>
+                                <input type="text" name="name" class="form-control" id="name-text"></input>
                             </div>
-                            <button class='btn btn-success add-recipe-button' type='button'><b>+</b></button>
-                            <button class='btn btn-danger delete-recipe-button' type='button'><b>-</b></button>
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Tags</label>
-                            <input name="tags" type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" value='postRecipe' class="recipe-post-button btn btn-primary">Post</button>
-                        </div>
-                    </form>
-                </div>
+                            <div class="form-group">
+                                <input type="file" name="file" id="file">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message</label>
+                                <textarea name="message" class="form-control" id="message-text"></textarea>
+                            </div>
+                            <div class="form-group" id="recipe-form">
+                                <label for="recipe-text" class="col-form-label">Recipe Steps</label>
+                                <div id="instructions">
+                                    <input type="text" name="instructions[]">
+                                </div>
+                                <button class='btn btn-success add-recipe-button' type='button'><b>+</b></button>
+                                <button class='btn btn-danger delete-recipe-button' type='button'><b>-</b></button>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Tags</label>
+                                <input name="tags" type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="recipe-post-button btn btn-primary">Post</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="disccussion">
+        <% posts.reverse().forEach(p => { %>
+        <div class='post'>
+            <div class="card">
+                <img src="/image/<%=p.image.data%>" id='recipe-pic' style="width:100%">
+                <div class="container">
+                    <h4><b><%=p.name%></b></h4>
+                    <h4><%=p.body%></h4>
+                </div>
+            </div>
+            <!-- <div class='post-pic'></div>
+                <div class='post-body'><%= p.body %></div>
+                <div class='post-recipe'><%= p.recipe %></div>
+                <div class='post-comments'></div> -->
+        </div>
+        <% }) %>
+
+        <!-- <div class="discussion">
             <form action="">
                 <label for="comment">Comment</label>
                 <input type="text" id="comment" name="comments" placeholder="Your Review...">
-
                 <label for="diet">Your Diet</label>
                 <select id="diet" name="Diet">
                     <option value="vegan">Vegan</option>
@@ -153,19 +174,17 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-
         <div>
             <form action="">
                 <label for="recipeSubmission">Recipe Submission</label>
                 <input type="text" id="recipeSubmission" name="submission" placeholder="Share your recipe...">
-
                 <button type="button" onclick="alert('This should submit Recipe Picture')">Upload Recipe Picture</button>
                 
                 <input type="submit" value="Submit">
             </form>
-        </div>
-        
-        
+        </div> -->
+
+
         <% include ./partials/footer.ejs %>
     </div>
 </body>
