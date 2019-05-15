@@ -33,33 +33,29 @@ html, body {
     color: orange;
 }
 
-.column {
-    flex: 33.33%;
-}
-
 .row {
-    border-style: hidden;
     display: flex;
-    position: relative;
-}
-
-.image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-}
-
-.middle {
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+    margin-left: 500px;
+    margin-right: 250px;
+    flex: 100%;
+    padding: 0 4px;
+  }
+    
+  .middle {
     transition: .5s ease;
     opacity: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, -50%);
     -ms-transform: translate(-50%, -50%);
-    text-align: relative;
+    text-align: left;
+    margin-right: 500px
 }
 
 .column:hover .image {
