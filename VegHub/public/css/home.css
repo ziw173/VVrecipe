@@ -39,11 +39,8 @@ html, body {
     padding: 0 4px;
   }
   
-  /* Create two equal columns that sits next to each other */
   .column {
-    margin-left: 500px;
-    margin-right: 250px;
-    flex: 100%;
+    flex: 5%;
     padding: 0 4px;
   }
     
@@ -107,3 +104,13 @@ color: white;
 .round {
 border-radius: 50%;
 }
+
+
+/*Carousel things*/
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    line-height: 1;
+    margin:auto;
+    }
