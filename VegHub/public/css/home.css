@@ -73,8 +73,7 @@ html, body {
 }
 
 .text {
-    background-color: #4CAF50;
-    color: white;
+    color: rgb(148, 218, 163);
     font-size: 16px;
     padding: 16px 32px;
 }
@@ -87,24 +86,24 @@ padding: 8px 16px;
 }
 
 a:hover {
-background-color: #ddd;
+background-color:#d2e7d6;
 color: black;
 }
 
-.previous {
-background-color: #f1f1f1;
-color: black;
-}
 
-.next {
-background-color: #4CAF50;
-color: white;
-}
+/*Image Grid formatting*/
+.grid { 
+    text-align: center;
+    display: block;
+    background: #d2e7d6;
+    }
 
-.round {
-border-radius: 50%;
-}
-
+  .grid img {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    width: 400px; 
+    height: 400px;
+    object-fit: cover;  }
 
 /*Carousel things*/
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
