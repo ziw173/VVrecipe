@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const GridFSStream = require('gridfs-stream');
-const Post = require('../models/post').post;
+const Post = require('../models/post');
 const URI = require('../keys/mongo');
 const connection = mongoose.createConnection(URI);
 

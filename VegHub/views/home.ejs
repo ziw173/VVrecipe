@@ -73,7 +73,13 @@
 
     <div class="grid">
         <% posts.reverse().forEach(p => { %>
-            <img  src="/image/<%=p.image.data%>"/>
+            <img  src="/image/<%=p.image.data%>" alt="Avatar" class="image"/>
+            <!--<div class="middle">
+                <div class="description">
+                    <%= p.name %>
+                    <%= p.body %>
+                </div>
+            </div>-->
         <% }); %>
 
     </div>

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var Post = mongoose.model('Post', {
+    user: String,
     name: String,
     image: {
         data: String,
@@ -15,5 +16,5 @@ var Post = mongoose.model('Post', {
     comments: []
 });
 
-module.exports.post = Post;
+module.exports = Post;
 

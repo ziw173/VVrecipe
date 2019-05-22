@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/post').post;
+const Post = require('../models/post');
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
@@ -72,18 +72,19 @@ router.post('/upload', upload.single('file'), (req, res) => {
     const year = date.getFullYear();
     const d = `${month}/${day}/${year}`;
     const postData = {
-        name: name,
-        image: {
-          data: req.file.filename,
-          contentType: req.file.contentType
-        },
-        body: body,
-        date: d,
-        tags: tags,
-        recipe: recipe,
-        ingredients: ingredients,
-        likes: likes,
-        comments: comments
+      user: req.session.user._id,
+      name: name,
+      image: {
+        data: req.file.filename,
+        contentType: req.file.contentType
+      },
+      body: body,
+      date: d,
+      tags: tags,
+      recipe: recipe,
+      ingredients: ingredients,
+      likes: likes,
+      comments: comments
     };
     // console.log(JSON.stringify(req.file) + '\n' + req.path + '\n' + req.file.contentType);
     const newPost = new Post(postData);
