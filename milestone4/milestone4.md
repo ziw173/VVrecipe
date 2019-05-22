@@ -15,3 +15,4 @@ In milestone3, we didn't have a carousel slide, but now we finally implemented i
 * The Upload button is correctly functioning. It uploads a picture of the recipe dish, description about dish and the ingredients to the dish. Uploading a recipe will update the image grid on the home page and the recipe page.
 
 ## Milestone4 Images
+![Home 1](https://github.com/henrywuo/VegHub/blob/master/Milestone3/home1.png)
