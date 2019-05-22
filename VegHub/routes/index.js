@@ -8,8 +8,11 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const GridStorage = require('multer-gridfs-storage');
 const GridFSStream = require('gridfs-stream');
-const URI = require('../models/post').uri;
+const URI = require('../keys/mongo');
+const User = require('../models/user');
 const connection = mongoose.createConnection(URI);
+const Comment = require('../models/comment');
+
 
 // Init gfs
 let gfs;
@@ -39,42 +42,20 @@ router.get('/', (req, res) => {
   Post.find({}).exec( (err, posts) => {
     if (err) throw err;
     gfs.files.find().toArray((err, files) => {
+      if (req.session.user) {
         res.render('home', { 
           posts: posts,
-          files: files 
+          files: files, 
+          user: req.session.user.username
         });
+      } else {
+        res.render('home', { 
+          posts: posts,
+          files: files, 
+        });
+      }
     });
   });
-});
-
-router.post('/postRecipe', (req,res) => {
-    const name = req.body.name;
-    const body = req.body.message;
-    const recipe = req.body.instructions;
-    const tags = req.body.tags;
-    const likes = req.body.likes;
-    const comments = req.body.comments;
-    const date = new Date();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const year = date.getFullYear();
-    const d = `${month}/${day}/${year}`;
-    const postData = {
-        name: name,
-        body: body,
-        date: d,
-        tags: tags,
-        recipe: recipe,
-        likes: likes,
-        comments: comments
-    };
-
-    const newPost = new Post(postData);
-    newPost.save( (err) => {
-        if (err) throw err;
-        console.log("Posted.");
-    });
-    res.redirect('/');
 });
 
 router.post('/upload', upload.single('file'), (req, res) => {
@@ -83,6 +64,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
     const recipe = req.body.instructions;
     const tags = req.body.tags;
     const likes = req.body.likes;
+    const ingredients = req.body.ingredients;
     const comments = req.body.comments;
     const date = new Date();
     const month = date.getMonth() + 1;
@@ -99,6 +81,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
         date: d,
         tags: tags,
         recipe: recipe,
+        ingredients: ingredients,
         likes: likes,
         comments: comments
     };
@@ -108,6 +91,13 @@ router.post('/upload', upload.single('file'), (req, res) => {
         if (err) throw err;
         console.log("Posted.");
     });
+    User.findByIdAndUpdate(
+      {_id: req.session.user._id},
+      {$push : {recipes: newPost._id}},
+      {safe: true, upsert: true, new: true},
+      (err, model) => {
+        if (err) throw err;
+      });
     res.redirect('/');
 });
   
@@ -141,6 +131,41 @@ router.get('/post/:filename', (req, res) => {
     });
       res.send(file);
     });
+});
+
+router.post('/comment', (req,res) => {
+  
+});
+
+router.post('/:id/comment', (req,res) => {
+  const user = req.session.user;
+  const name = user.username;
+  const body = req.body.comment;
+  const image = user.image;
+  const date = new Date();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const d = `${month}/${day}/${year}`;
+  const commentData = {
+      name: name,
+      image: image,
+      body: body,
+      date: d
+  };
+  const newComment = new Comment(commentData);
+  newComment.save( (err) => {
+      if (err) throw err;
+      console.log("Posted the comment: " + newComment.body);
+  });
+  Post.findByIdAndUpdate(
+    {_id: req.params.id},
+    {$push : {comments: newComment}},
+    {safe: true, upsert: true, new: true},
+    (err, model) => {
+      if (err) throw err;
+    });
+  res.redirect('/');
 });
 
 module.exports = {

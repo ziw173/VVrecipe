@@ -7,6 +7,19 @@ $(document).ready(() => {
             dataType: 'json',
             success: (data) => {
                 $('#search-box-img').attr('src', '/image/' + data.filename);
+                $('#search-box-img').attr('width', '400px');
+            }
+        })
+    });
+    $('#recipe-button').click(() => {
+        const search = 'post/' + $('#search-box').val() + '.jpg';
+        $.ajax({
+            url: search,
+            type: 'GET',
+            dataType: 'json',
+            success: (data) => {
+                $('#search-box-img').attr('src', '/image/' + data.filename);
+                $('#search-box-img').attr('width', '400px');
             }
         })
     });
@@ -36,3 +49,7 @@ $(document).ready(() => {
     //     // modal.find('.modal-title').text('Create a Recipe')
     //   })
 });
+
+function isEmpty() {
+    return !($('.post-comment').val().length) ? false : true;
+}
