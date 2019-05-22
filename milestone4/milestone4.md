@@ -17,9 +17,12 @@ In milestone3, we didn't have a carousel slide, but now we finally implemented i
 ## Milestone4 Images </br>
 ### Home
 ![Home 1](https://github.com/henrywuo/VegHub/blob/master/milestone4/home1.PNG)
-![Home 1](https://github.com/henrywuo/VegHub/blob/master/milestone4/home2.PNG)
+![Home 2](https://github.com/henrywuo/VegHub/blob/master/milestone4/home2.PNG)
+![Home 3](https://github.com/henrywuo/VegHub/blob/master/milestone4/home3.png)
+![Home 4](https://github.com/henrywuo/VegHub/blob/master/milestone4/home4.png)
 
 ### Recipe
-![Recipe](https://github.com/henrywuo/VegHub/blob/master/milestone4/recipe.PNG)
+![Recipe 1](https://github.com/henrywuo/VegHub/blob/master/milestone4/recipe.PNG)
+![Recipe 2](https://github.com/henrywuo/VegHub/blob/master/milestone4/recipe2.png)
 
 
