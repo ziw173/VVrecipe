@@ -47,7 +47,7 @@
                 <img src="https://ik2oa1wlcj46xaafvt85daad-wpengine.netdna-ssl.com/wp-content/uploads/2019/01/Waldorf-Salad-600x550.png"
                     alt="Salad">
                 <div class="carousel-caption">
-                    <h3>Deez Salad</h3>
+                    <h3> Salad</h3>
                     <p>Healthy!</p>
                 </div>
             </div>
@@ -73,15 +73,14 @@
 
     <div class="grid">
         <% posts.reverse().forEach(p => { %>
-            <img  src="/image/<%=p.image.data%>" alt="Avatar" class="image"/>
-            <!--<div class="middle">
-                <div class="description">
-                    <%= p.name %>
+        <div class="foodcontent">
+            <img src="/image/<%=p.image.data%>" alt="Avatar" class="image" />
+            <div class="middle">
+                    <h3><%= p.name %></h3>
                     <%= p.body %>
-                </div>
-            </div>-->
+            </div>
+        </div>
         <% }); %>
-
     </div>
 
 
