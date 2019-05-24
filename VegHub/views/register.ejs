@@ -2,11 +2,41 @@
 <html>
     <head>
         <% include ./partials/header.ejs %>
+        <link rel='stylesheet' type="text/css" href='/css/register.css'>
     </head>
     <body>
         <% include ./partials/navbar.ejs %>
-            <form>
-                    <input type="button" value="Go back!" onclick="history.back()">
+        <div id='register-left'>
+            <h1>Login</h1>
+                <form class="form" action="/register/login" method="post">
+                    <div id="user-authentication">
+                        <label for="username">Username</label>
+                        <input class="u-full-width" type="text" id="username" name="username" autocomplete="off">
+                        <label for="password">Password</label>
+                        <input class="u-full-width" type="password" name="password" autocomplete="off">
+                        <button class="button-primary">Login</button>
+                    </div>
+                </form>
+        </div>
+        <div id='register-right'>
+            <h1>Register</h1>
+            <form class="form" action="/register/register" method="post">
+                <div id="user-authentication">
+                    <label for="username">Username</label>
+                    <input class="u-full-width" type="text" id="username" name="username" autocomplete="off">
+                    <label for="firstName">First Name</label>
+                    <input class="u-full-width" type="text" id="firstName" name="firstName" autocomplete="off">
+                    <label for="lastName">Last Name</label>
+                    <input class="u-full-width" type="text" id="lastName" name="lastName" autocomplete="off">
+                    <label for="password">Password</label>
+                    <input class="u-full-width" type="password" name="password" autocomplete="off">
+                    <label for="password">Confirm Password</label>
+                    <input class="u-full-width" type="password" name="password2" autocomplete="off">
+                    <button class="button-primary">Register</button>
+                </div>
             </form>
+        </div>
+
+        
     </body>
 </html>

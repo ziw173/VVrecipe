@@ -8,8 +8,9 @@ const recipe = require('./routes/recipe');
 const register = require('./routes/register');
 const profile = require('./routes/profile');
 const singleRecipe = require('./routes/singleRecipe');
-const URI = require('./models/post').uri;
+const URI = require('./keys/mongo');
 const mongoose = require('mongoose');
+const flash = require('connect-flash');
 
 
 const app = express();
@@ -22,8 +23,29 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//express-validator
+app.use(expressValidator());
+
 //static folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Express session
+app.use(session({
+    secret: 'secret',
+    saveUninitialized: true,
+    resave: true
+}));
+
+//Connect flash
+app.use(flash());
+
+app.use( (req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
+    next();
+});
 
 //port
 app.set('port', (process.env.PORT || 3000));
@@ -34,6 +56,13 @@ app.use('/recipe', recipe.router);
 app.use('/register', register.router);
 app.use('/profile', profile.router);
 app.use('/singleRecipe', singleRecipe.router);
+app.use('/register', register.router);
+
+//Global variables
+app.use((req, res, next) => {
+    res.locals.user = res.locals.user || null;
+    next();
+});
 
 //Connect DB
 mongoose.connect(URI,
