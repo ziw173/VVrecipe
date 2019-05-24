@@ -1,7 +1,11 @@
 /* GENERAL CSS */
 html, body {
     max-width: 100%;
-    background-color: #d2e7d6;
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4, p, label, button, li, footer, a {
+    font-family: 'Montserrat', sans-serif;
 }
 
 footer {
@@ -9,18 +13,29 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100px;
-    background-color: #dfdfdf!important;
+    height: 150px;
+    background-color: #65CCB8!important;
     transform: translateY(100%);
+    padding: 10px;
 }
 
-footer a {
+footer, a {
     color: white;
-    right: 50%;
+}
+
+.nav-text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item {
+    margin-right: 20px;
 }
 
 
-
+.nav-single:hover {
+    border-bottom: 2px solid currentColor;
+    cursor: pointer;
+}
 
 /* POST TEMPLATE */
 .post {
@@ -42,15 +57,15 @@ footer a {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
+.main {
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    margin: 100px 50px 100px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
 
 /* Style inputs */
 input[type=text], select {
@@ -79,3 +94,170 @@ input[type=text], select {
   input[type=submit]:hover {
     background-color: #45a049;
   }
+
+  
+.search-recipe {
+    position: absolute;
+    right: 200px;
+}
+
+#search-box {
+    float: left;
+}
+
+#recipe-button {
+    float: right;
+    margin-top: -50px;
+}
+
+/* POST */
+.all-posts {
+    margin-top: 400px;
+}
+
+.post-container {
+    height: 700px;
+}
+
+.post {
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    min-width: 100%;
+}
+
+.post-image {
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 500px;
+    min-width: 550px;
+    max-width: 550px;
+    max-height: 600px;
+}
+
+.post-left {
+    position: relative;
+    display: table-cell;
+    text-align: left;
+
+}
+
+.post-right {
+    vertical-align: top;
+    width: 450px;
+    position: relative;
+    display: table-cell;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+}
+
+.post-name {
+    text-align: center;
+}
+
+.post-body {
+    font-weight: 50;
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 0.01em;
+    word-break: break-word;
+    padding: 15px 30px;
+    color: #222;
+}
+
+.post-user-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 5px 0px 0px 5px;
+}
+
+.post-buttons {
+    width: 100%;
+    height: 50px;
+}
+
+.post-button-entry {
+    width: 30%;
+    float: left;
+    text-align: center;
+    /* background-color: rgb(231, 231, 231); */
+    border-radius: 10px;
+    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.post-btn {
+    width: 100px;
+    font-size: 20px;
+}
+
+/* .post-button-entry:hover {
+    cursor: pointer;
+    background-color: rgb(216, 216, 216);
+    border-radius: 10px;
+} */
+
+.post-like {
+
+}
+
+.post-comments {
+
+}
+
+.comment-user-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 5px 0px 0px 5px;
+    float: left;
+}
+
+.comment-body {
+    border-radius: 15px;
+    background-color: rgb(230, 230, 230);
+    margin: 0px 0px 10px 5px;
+    width: 85%;
+    min-height: 35px;
+    word-wrap: break-word;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.tweet-comment {
+    bottom: 0%;
+    width: 100%;
+    min-height: 50px;
+    background: #f1f1f1;
+    border: 2px solid rgb(248, 248, 248);
+    border-radius: 8px;
+    resize: none;
+    line-height: 20px;
+    padding: 6px 12px;
+    margin-bottom: 5px;
+}
+
+.comment-button {
+    position: relative;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: white;
+    background-color: #43d65e;
+    border-color: transparent;
+    border-radius: 100px;
+}
+
+.comment-form {
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+}

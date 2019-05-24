@@ -43,6 +43,18 @@ router.get('/search/:name', (req, res) => {
   });
 });
 
+router.post('/:id/save', (req, res) => {
+  const user = req.session.user;
+  User.findByIdAndUpdate(
+    {_id: user._id},
+    {$push : {saved: req.params.id}},
+    {safe: true, upsert: true, new: true},
+    (err, model) => {
+      if (err) throw err;
+  });
+  res.redirect('/');
+});
+
 module.exports = {
     router: router
 }

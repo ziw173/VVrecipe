@@ -8,11 +8,11 @@ $(document).ready(() => {
     var source = $("#recipe-query").html();
     var template = Handlebars.compile(source);
     var parentDiv = $("#query-list");
-    $('#recipe-button').click(() => {
-        if ($('#search-box').val().length !== 0) {
+    $('#recipe-search-button').click(() => {
+        if ($('#recipe-search-box').val().length !== 0) {
             $('#query-list').empty();
             $('.all-recipes').hide();
-            const search = '/recipe/search/' + $('#search-box').val();
+            const search = '/recipe/search/' + $('#recipe-search-box').val();
             $.ajax({
                 url: search,
                 type: 'GET',
@@ -31,10 +31,15 @@ $(document).ready(() => {
         }   
     });
 
-    $('#search-box').keyup(() => {
-        if ($('#search-box').val().length === 0) {
+    $('#recipe-search-box').keyup(() => {
+        if ($('#recipe-search-box').val().length === 0) {
             $('#query-list').empty();
             $('.all-recipes').show();
         }
+    });
+
+    $('.post-image').click(() => {
+        // console.log('clicked');
+        // $(this).parents().eq(2).find('#show-single-recipe').removeClass('recipe-hidden');
     });
 });

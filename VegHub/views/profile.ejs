@@ -2,11 +2,36 @@
 <html>
     <head>
         <% include ./partials/header.ejs %>
+        <link rel='stylesheet' type="text/css" href='/css/profile.css'>
     </head>
     <body>
         <% include ./partials/navbar.ejs %>
-        <h1>Profile</h1>
+        <div class='main'>
+            <div class='profile'>
+                <img src='/pics/user.png' class='img-fluid'>
+                <h2 class='profile-name'><%=first%> <%=last%></h2>
+            </div>
 
-        
+            
+            <div class='profile-section'>
+                <h4>My Recipes</h4>
+                <% recipes.forEach((r) => { %>
+                    <p><%=r.name%></p>
+                <% }); %>
+            </div>
+            <div class='profile-section'>
+                <h4>Bio</h4>
+                <p><%=bio%></p>
+            </div>
+            <div class='profile-section'>
+                <div class='saved-recipes'>
+                    <h4>Saved Recipes</h4>
+                    <% console.log(saved.length) %>
+                    <% saved.forEach( (recipe) => { %>
+                        <p><%=recipe.name%></p>
+                    <% }); %>
+                </div>
+            </div>
+        </div> 
     </body>
 </html>

@@ -38,7 +38,7 @@ body {
 .container {
     padding: 2px 16px;
 }
-
+  
 img {
     border-radius: 5px 5px 0 0;
     height: 350px;
@@ -47,8 +47,9 @@ img {
 .single-recipe {
     width: 1200px;
     padding: 20px;
-    height: 380px;
     margin: 0 auto;
+    min-height: 500px;
+    max-height: 600px;
 }
 
 .single-recipe-left {
@@ -64,11 +65,47 @@ img {
     display: table-cell;
     text-align: left;
     background-color: white;
+    max-height: 500px;
     padding: 20px 20px 5px 20px;
 }
 
 .single-recipe-right-entry {
     height: 100%;
-    width: 33%;
+    width: 50%;
     float: left;
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.post-image {
+    min-height: 500px;
+    min-width: 550px;
+    max-width: 550px;
+    max-height: 600px;
+}
+
+.post-image:hover {
+    cursor: pointer;
+    /* filter: brightness(50%); */
+}
+
+.recipe-list {
+    overflow-y: auto;
+}
+
+.recipe-hover {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    display: -webkit-flex;
+}
+
+.recipe-hidden {
+    display: none !important;
 }
