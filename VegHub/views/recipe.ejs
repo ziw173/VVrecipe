@@ -26,13 +26,17 @@
             <div class='single-recipe-right-entry'>
               <h4 style='text-align: center;'>Ingredients</h4>
               <ul>
-                {{ingredients}}
+                {{#each ingredients}}
+                  <li>{{this}}</li>
+                {{/each}}
               </ul>
             </div>
             <div class='single-recipe-right-entry'>
                 <h4 style='text-align: center;'>Recipe</h4>
                 <ul>
-                  {{recipe}}
+                  {{#each recipe}}
+                    <li>{{this}}</li>
+                  {{/each}}
                 </ul>
               </div>
           </div>

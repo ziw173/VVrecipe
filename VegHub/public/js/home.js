@@ -1,28 +1,28 @@
 $(document).ready(() => {
-    $('#recipe-button').click(() => {
-        const search = 'post/' + $('#search-box').val() + '.png';
-        $.ajax({
-            url: search,
-            type: 'GET',
-            dataType: 'json',
-            success: (data) => {
-                $('#search-box-img').attr('src', '/image/' + data.filename);
-                $('#search-box-img').attr('width', '400px');
-            }
-        })
-    });
-    $('#recipe-button').click(() => {
-        const search = 'post/' + $('#search-box').val() + '.jpg';
-        $.ajax({
-            url: search,
-            type: 'GET',
-            dataType: 'json',
-            success: (data) => {
-                $('#search-box-img').attr('src', '/image/' + data.filename);
-                $('#search-box-img').attr('width', '400px');
-            }
-        })
-    });
+    // $('#recipe-button').click(() => {
+    //     const search = 'post/' + $('#search-box').val() + '.png';
+    //     $.ajax({
+    //         url: search,
+    //         type: 'GET',
+    //         dataType: 'json',
+    //         success: (data) => {
+    //             $('#search-box-img').attr('src', '/image/' + data.filename);
+    //             $('#search-box-img').attr('width', '400px');
+    //         }
+    //     })
+    // });
+    // $('#recipe-button').click(() => {
+    //     const search = 'post/' + $('#search-box').val() + '.jpg';
+    //     $.ajax({
+    //         url: search,
+    //         type: 'GET',
+    //         dataType: 'json',
+    //         success: (data) => {
+    //             $('#search-box-img').attr('src', '/image/' + data.filename);
+    //             $('#search-box-img').attr('width', '400px');
+    //         }
+    //     })
+    // });
 
     $('.add-recipe-button').click(() => {
         const div = document.getElementById("instructions");

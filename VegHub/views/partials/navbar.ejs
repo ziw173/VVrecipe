@@ -9,6 +9,7 @@
             <li class="nav-item">
               <a class="nav-link nav-text nav-single" style='font-weight: bold; color: white; font-size: 18px;' href="recipe">Recipes</a>
             </li>
+            <% if (user) { %>
             <li class="nav-item">
               <a class="nav-link nav-text nav-single" style='font-weight: bold; color: white; font-size: 18px;' href="profile">Profile</a>
             </li>
@@ -16,6 +17,7 @@
               <a class="nav-link nav-text nav-single" style='font-weight: bold; color: white; font-size: 18px;' data-toggle="modal" data-target="#exampleModal"
             data-whatever="@mdo">Upload</a>
             </li>
+            <% } %>
           </ul>
           
           <span class="navbar-text">
@@ -24,12 +26,12 @@
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </form> -->
-              <div class='search-recipe'>
-                  <input id="search-box" type="text" size="20" />
-                  <!-- <img id='search-box-img' src="" /> -->
-                  <button id="recipe-button">Search Food</button>
-                  <div id='food-title'></div>
-              </div>
+              <form action='/search' method='POST'>
+                <div class='search-recipe'>
+                    <input id="search-box" name="query" type="text" size="20" />
+                    <button type="submit" id="recipe-button">Search Food</button>
+                </div>
+              </form> 
             <% if (!user) { %>
               <button onclick='location.href="register"'>Log In</button>
               <button onclick='location.href="register"' style='margin-right: 40px;'>Sign Up</button>

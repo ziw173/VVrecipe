@@ -177,6 +177,17 @@ router.post('/:id/save', (req, res) => {
   res.redirect('/');
 });
 
+router.post('/search', (req, res) => {
+  console.log('searched for food');
+  res.redirect('recipe?search=' + req.body.query);
+});
+
+router.get('/allRecipes', (req, res) => {
+  Post.find({}).exec((err, posts) => {
+    res.send(posts);
+  });
+});
+
 module.exports = {
     router: router
 }
