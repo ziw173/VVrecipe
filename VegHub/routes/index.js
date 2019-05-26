@@ -10,8 +10,8 @@ const GridStorage = require('multer-gridfs-storage');
 const GridFSStream = require('gridfs-stream');
 const URI = require('../keys/mongo');
 const User = require('../models/user');
-const connection = mongoose.createConnection(URI);
 const Comment = require('../models/comment');
+const connection = mongoose.createConnection(URI);
 
 
 // Init gfs
@@ -60,18 +60,18 @@ router.get('/', (req, res) => {
 
 router.post('/upload', upload.single('file'), (req, res) => {
   const name = req.body.name;
-    const body = req.body.message;
-    const recipe = req.body.instructions;
-    const tags = req.body.tags;
-    const likes = req.body.likes;
-    const ingredients = req.body.ingredients;
-    const comments = req.body.comments;
-    const date = new Date();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const year = date.getFullYear();
-    const d = `${month}/${day}/${year}`;
-    const postData = {
+  const body = req.body.message;
+  const recipe = req.body.instructions;
+  const tags = req.body.tags;
+  const likes = req.body.likes;
+  const ingredients = req.body.ingredients;
+  const comments = req.body.comments;
+  const date = new Date();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const d = `${month}/${day}/${year}`;
+  const postData = {
       user: req.session.user._id,
       name: name,
       image: {
@@ -85,21 +85,21 @@ router.post('/upload', upload.single('file'), (req, res) => {
       ingredients: ingredients,
       likes: likes,
       comments: comments
-    };
-    // console.log(JSON.stringify(req.file) + '\n' + req.path + '\n' + req.file.contentType);
-    const newPost = new Post(postData);
-    newPost.save( (err) => {
-        if (err) throw err;
-        console.log("Posted.");
-    });
-    User.findByIdAndUpdate(
-      {_id: req.session.user._id},
-      {$push : {recipes: newPost._id}},
-      {safe: true, upsert: true, new: true},
-      (err, model) => {
-        if (err) throw err;
-      });
-    res.redirect('/');
+  };
+  // console.log(JSON.stringify(req.file) + '\n' + req.path + '\n' + req.file.contentType);
+  const newPost = new Post(postData);
+  newPost.save( (err) => {
+      if (err) throw err;
+      console.log("Posted.");
+  });
+  User.findByIdAndUpdate(
+    {_id: req.session.user._id},
+    {$push : {recipes: newPost._id}},
+    {safe: true, upsert: true, new: true},
+    (err, model) => {
+      if (err) throw err;
+  });
+  res.redirect('/');
 });
   
 router.get('/image/:filename', (req, res) => {
@@ -134,10 +134,6 @@ router.get('/post/:filename', (req, res) => {
     });
 });
 
-router.post('/comment', (req,res) => {
-  
-});
-
 router.post('/:id/comment', (req,res) => {
   const user = req.session.user;
   const name = user.username;
@@ -167,6 +163,29 @@ router.post('/:id/comment', (req,res) => {
       if (err) throw err;
     });
   res.redirect('/');
+});
+
+router.post('/:id/save', (req, res) => {
+  const user = req.session.user;
+  User.findByIdAndUpdate(
+    {_id: user._id},
+    {$push : {saved: req.params.id}},
+    {safe: true, upsert: true, new: true},
+    (err, model) => {
+      if (err) throw err;
+  });
+  res.redirect('/');
+});
+
+router.post('/search', (req, res) => {
+  console.log('searched for food');
+  res.redirect('recipe?search=' + req.body.query);
+});
+
+router.get('/allRecipes', (req, res) => {
+  Post.find({}).exec((err, posts) => {
+    res.send(posts);
+  });
 });
 
 module.exports = {

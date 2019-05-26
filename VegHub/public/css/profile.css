@@ -1,0 +1,36 @@
+.main {
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    height: 1000px;
+    margin: 100px 50px 100px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.img-fluid {
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    transform: translate3d(0,-50%,0);
+    border-radius: 50%!important;
+    box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.profile {
+    text-align: center;
+    height: 200px;
+}
+
+.profile-section {
+    text-align: center;
+    float: left;
+    width: 33%;
+    height: 800px;
+    box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.profile-name {
+    margin-top: -50px;
+}

@@ -53,7 +53,7 @@ router.post('/login', (req, res) => {
     User.getUser(req.body.username, (err, user) => {
         if (err) throw err;
 
-        if (!user) return done(null, false, {message: 'Unknown User'});
+        if (!user) res.redirect('/');
 
         User.comparePassword(req.body.password, user.password, (err, matches) => {
             if (err) throw err;
