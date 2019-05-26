@@ -6,6 +6,7 @@
     </head>
     <body>
         <% include ./partials/navbar.ejs %>
+        <% include ./partials/upload.ejs %>
         <div class='main'>
             <div class='profile'>
                 <img src='/pics/user.png' class='img-fluid'>
@@ -15,23 +16,24 @@
             
             <div class='profile-section'>
                 <h4>My Recipes</h4>
-                <% recipes.forEach((r) => { %>
-                    <p><%=r.name%></p>
-                <% }); %>
-            </div>
-            <div class='profile-section'>
-                <h4>Bio</h4>
-                <p><%=bio%></p>
+                <div class='profile-recipe'>
+                    <% recipes.forEach((r) => { %>
+                        <img class='profile-recipe-image' src="/image/<%=r.image.data%>"/>
+                    <% }); %>
+                </div>
+
             </div>
             <div class='profile-section'>
                 <div class='saved-recipes'>
                     <h4>Saved Recipes</h4>
-                    <% console.log(saved.length) %>
-                    <% saved.forEach( (recipe) => { %>
-                        <p><%=recipe.name%></p>
+                    <% saved.forEach( (r) => { %>
+                        <!-- <div class='profile-saved'> -->
+                            <img class='profile-recipe-image' src="/image/<%=r.image.data%>"/>
+                        <!-- </div> -->
                     <% }); %>
                 </div>
             </div>
         </div> 
+        <% include ./partials/footer.ejs %>
     </body>
 </html>

@@ -26,11 +26,32 @@
 .profile-section {
     text-align: center;
     float: left;
-    width: 33%;
+    width: 50%;
     height: 800px;
     box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+    padding: 10px;
 }
 
 .profile-name {
     margin-top: -50px;
+}
+
+.profile-recipe {
+    overflow-y: auto;
+    height: 750px;
+}
+
+.profile-saved {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 15px;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 10px;
+    overflow-y: auto;
+    height: 750px;
+}
+
+.profile-recipe-image {
+    width: 240px;
+    height: 240px;
+    float: left;
 }

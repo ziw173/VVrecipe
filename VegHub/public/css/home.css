@@ -1,25 +1,7 @@
-html, body {
-}
 
 .home-container {
     position: absolute;
     width: 100%;
-}
-
-
-.add-recipe-button {
-    height:40px; 
-    width:80px; 
-    margin: 0px -50px; 
-    position:relative;
-    left:45%;
-}
-
-.delete-recipe-button {
-    height:40px; 
-    width:80px;
-    position: relative;
-    left: 55%;
 }
 
 
@@ -117,15 +99,12 @@ border-radius: 50%;
     width: 276px;    
 }
 
-.foodcontent:hover .image{
-    opacity: 0.3;
-  }
 
-  .foodcontent:hover .middle {
+.foodcontent:hover .middle {
     opacity: 0.9;
-  }
+}
 
-  .grid { 
+.grid { 
     text-align: center;
     display: grid;
     grid-template-columns: 276px 276px 276px 276px;

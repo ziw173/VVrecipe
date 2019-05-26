@@ -8,8 +8,10 @@
     </head>
     <body>
         <% include ./partials/navbar.ejs %>
-        <h1> Recipes </h1>
+        <% include ./partials/upload.ejs %>
 
+        <h1> Recipes </h1>
+      
       <div class='recipe-search-recipe'>
         <input id="recipe-search-box" type="text" size="20" />
         <button id="recipe-search-button">Search Food</button>
