@@ -117,7 +117,8 @@ img {
 
 .hide-single {
     z-index: 1000;
-    color: white;
+    color: black;
+    float: right;
 }
 
 .hide-single:hover {
