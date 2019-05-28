@@ -43,9 +43,12 @@ $(document).ready(() => {
             $('.all-recipes').show();
         }
     });
-
-    $('.post-image').click(() => {
-        // console.log('clicked');
-        // $(this).parents().eq(2).find('#show-single-recipe').removeClass('recipe-hidden');
-    });
 });
+
+function show(i) {
+    $('.show-single-recipe' + i).removeClass('recipe-hidden');
+}
+
+function hide(i) {
+    $('.show-single-recipe' + i).addClass('recipe-hidden');
+}

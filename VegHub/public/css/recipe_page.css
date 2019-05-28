@@ -94,12 +94,17 @@ img {
 }
 
 .recipe-hover {
-    display: flex;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
     overflow: auto;
     z-index: 100;
     background: rgba(0, 0, 0, 0.85);
@@ -108,4 +113,13 @@ img {
 
 .recipe-hidden {
     display: none !important;
+}
+
+.hide-single {
+    z-index: 1000;
+    color: white;
+}
+
+.hide-single:hover {
+    cursor: pointer;
 }
