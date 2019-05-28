@@ -107,7 +107,7 @@ border-radius: 50%;
     grid-gap: 3px;
 }
 
-.grid img {
+.image {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     width: 276px; 
@@ -117,7 +117,6 @@ border-radius: 50%;
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
-
 }
 
 .middle {
@@ -135,6 +134,10 @@ border-radius: 50%;
     font-size: 14px;
     padding: 16px 32px;
   }
+
+.middle:hover {
+    cursor: pointer;
+}
 
 
 /*Carousel things*/

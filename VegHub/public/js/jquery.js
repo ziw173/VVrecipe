@@ -14,3 +14,11 @@ $(document).ready(() => {
         $('#instructions br:last').remove();
     });
 });
+
+function show(i) {
+    $('.show-single-recipe' + i).removeClass('recipe-hidden');
+}
+
+function hide(i) {
+    $('.show-single-recipe' + i).addClass('recipe-hidden');
+}

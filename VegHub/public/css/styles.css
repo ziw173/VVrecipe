@@ -174,7 +174,7 @@ input[type=text], select {
     display: table-cell;
     text-align: left;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
 }
 
 .post-name {
@@ -278,6 +278,7 @@ input[type=text], select {
     position: relative;
     font-weight: bold;
     padding: 5px 15px;
+    margin-bottom: 5px;
     color: white;
     background-color: #43d65e;
     border-color: transparent;
@@ -289,4 +290,36 @@ input[type=text], select {
     width: 90%;
     position: absolute;
     bottom: 0;
+}
+
+.recipe-hover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    overflow: auto;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    display: -webkit-flex;
+}
+
+.recipe-hidden {
+    display: none !important;
+}
+
+.hide-single {
+    z-index: 1000;
+    color: black;
+    float: right;
+}
+
+.hide-single:hover {
+    cursor: pointer;
 }
