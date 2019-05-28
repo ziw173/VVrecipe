@@ -33,14 +33,14 @@
                 {{/each}}
               </ul>
             </div>
-            <div class='single-recipe-right-entry'>
+            <!-- <div class='single-recipe-right-entry'>
                 <h4 style='text-align: center;'>Recipe</h4>
                 <ul>
                   {{#each recipe}}
                     <li>{{this}}</li>
                   {{/each}}
                 </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </script>
@@ -48,26 +48,27 @@
       <div id='query-list'>
 
       </div>
+
       <div class='all-recipes'>
         <% var i = 0; %>
         <% posts.forEach( (p) => { %>
           <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
-              <h2 class='hide-single' onclick='hide(<%=i%>)'>X</h2>
               <% include ./partials/recipe-partial.ejs %>
           </div>
           <div class='single-recipe'>
-              <div class='single-recipe-left' onclick="show(<%=i++%>);">
+              <div class='single-recipe-left' onclick='show(<%=i%>)'>
                   <div class='image-container'>
                       <img class='post-image' src="/image/<%=p.image.data%>"/>
                   </div>
               </div>
+              <%i++;%>
             <div class='single-recipe-right'>
               <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
               <div class='single-recipe-right-entry'>
                 <h4 style='text-align: center;'>Ingredients</h4>
                 <ul>
-                  <% p.ingredients[0].split(', ').forEach( (i) => { %>
-                      <li><%=i%></li>
+                  <% p.ingredients[0].split(', ').forEach( (ing) => { %>
+                      <li><%=ing%></li>
                   <% }); %>
                 </ul>
               </div>

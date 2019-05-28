@@ -3,6 +3,7 @@
     <head>
         <% include ./partials/header.ejs %>
         <link rel='stylesheet' type="text/css" href='/css/profile.css'>
+        <script type="text/javascript" src='/js/profile.js'></script>
     </head>
     <body>
         <% include ./partials/navbar.ejs %>
@@ -10,11 +11,29 @@
         <div class='main'>
             <div class='profile'>
                 <img src='/pics/user.png' class='img-fluid'>
-                <h2 class='profile-name'><%=first%> <%=last%></h2>
+                <h2 class='profile-name'><%=user%></h2>
             </div>
 
+            <div class="col-md-7 ml-auto mr-auto">
+                <div class='profile-tabs'>
+                    <ul class="nav justify-content-center">
+                        <li class='nav-item active single' id='mine'>
+                            <a class='nav-link profile-single'>
+                                <img class='profile-single-icon' src='/pics/mine.png'/>
+                                <p class='profile-single-text'>MINE</p>
+                            </a>
+                        </li>
+                        <li class='nav-item single' id='favorites'>
+                            <a class='nav-link profile-single'>
+                                <img class='profile-single-icon' src='/pics/favorites.png'/>
+                                <p class='profile-single-text'>FAVORITES</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             
-            <div class='profile-section'>
+            <!-- <div class='profile-section'>
                 <h4>My Recipes</h4>
                 <div class='profile-recipe'>
                     <% recipes.forEach((r) => { %>
@@ -22,14 +41,25 @@
                     <% }); %>
                 </div>
 
-            </div>
-            <div class='profile-section'>
-                <div class='saved-recipes'>
-                    <h4>Saved Recipes</h4>
-                    <% saved.forEach( (r) => { %>
-                        <!-- <div class='profile-saved'> -->
-                            <img class='profile-recipe-image' src="/image/<%=r.image.data%>"/>
-                        <!-- </div> -->
+             </div> -->
+            <div class='col-md-7 ml-auto mr-auto profile-section'>
+                <div class='profile-saved' id='scrollbar' style='display: none'>
+                    <% let i = 0; %>
+                    <% saved.forEach( (p) => { %>
+                        <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
+                            <% include ./partials/recipe-partial.ejs %>
+                        </div>
+                        <img class='profile-recipe-image' src="/image/<%=p.image.data%>" onclick='show(<%=i%>)'/>
+                        <% i++; %>
+                    <% }); %>
+                </div>
+                <div class='profile-recipe' id='scrollbar'>
+                    <% recipes.forEach( (p) => { %>
+                        <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
+                            <% include ./partials/recipe-partial.ejs %>
+                        </div>
+                        <img class='profile-recipe-image' src="/image/<%=p.image.data%>" onclick='show(<%=i%>)'/>
+                        <% i++; %>
                     <% }); %>
                 </div>
             </div>
