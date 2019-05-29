@@ -53,7 +53,7 @@
         <% var i = 0; %>
         <% posts.forEach( (p) => { %>
           <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
-              <% include ./partials/recipe-partial.ejs %>
+              <% include ./partials/recipe-page.ejs %>
           </div>
           <div class='single-recipe'>
               <div class='single-recipe-left' onclick='show(<%=i%>)'>

@@ -124,3 +124,10 @@ img {
 .hide-single:hover {
     cursor: pointer;
 }
+
+.recipe-steps {
+    height: 300px;
+    padding: 10px;
+    overflow-y: scroll;
+    list-style-type: none;
+}
