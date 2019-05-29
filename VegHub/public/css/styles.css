@@ -341,3 +341,10 @@ input[type=text], select {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: rgb(80, 78, 78);
 }
+
+.recipe-steps {
+    height: 300px;
+    padding: 10px;
+    overflow-y: scroll;
+    list-style-type: none;
+}

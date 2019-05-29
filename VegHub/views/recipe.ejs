@@ -61,10 +61,10 @@
                       <img class='post-image' src="/image/<%=p.image.data%>"/>
                   </div>
               </div>
-            <div class='single-recipe-right'>
+            <div class='single-recipe-right' id='scrollbar'>
               <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
                 <h3>Ingredients</h3>
-                <ul class='ingredients' id='scrollbar'>
+                <ul class='ingredients'>
                   <% p.ingredients[0].split(', ').forEach( (ing) => { %>
                       <li><%=ing%></li>
                   <% }); %>
