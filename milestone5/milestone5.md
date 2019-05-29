@@ -14,15 +14,15 @@ Bob is looking over vegan food on Instagram and found some delicious looking foo
 
 ### Latest UI Screenshots
 #### Home
-![Home 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/home1.PNG)</br>
-![Home 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/home2.png)</br>
-![Home 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/home3.PNG)</br>
+* ![Home 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/home1.PNG)</br>
+* ![Home 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/home2.png)</br>
+* ![Home 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/home3.PNG)</br>
 
 #### Recipe
-![Recipe 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/recipe1.PNG)</br>
-![Recipe 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/recipe2.PNG)</br>
+* ![Recipe 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/recipe1.PNG)</br>
+* ![Recipe 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/recipe2.PNG)</br>
 
 
 #### Profile
-![Profile 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile1.PNG)</br>
-![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile2.PNG)</br>
+* ![Profile 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile1.PNG)</br>
+* ![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile2.PNG)</br>
