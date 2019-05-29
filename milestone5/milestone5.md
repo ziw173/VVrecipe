@@ -13,4 +13,16 @@ Bob is looking over vegan food on Instagram and found some delicious looking foo
 </br>
 
 ### Latest UI Screenshots
+#### Home
 ![Home 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/home1.PNG)
+![Home 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/home1.png)
+![Home 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/home3.PNG)
+
+#### Recipe
+![Recipe 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/recipe1.PNG)
+![Recipe 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/recipe2.PNG)
+
+
+#### Profile
+![Profile 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile1.PNG)
+![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile2.PNG)
