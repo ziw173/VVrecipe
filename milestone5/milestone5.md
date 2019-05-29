@@ -12,8 +12,6 @@
 Bob is looking over vegan food on Instagram and found some delicious looking food. He decided that he wants to recreate it for himself but a problem arose. The person who posted the pictures of the food did not list any recipe or ingredients.</br> Bob didn't give up so he decided to try to find the recipe for the dishes he saw. He came across the vegan/vegetarian site VegHub. On the site, Bob can enjoy looking at all the homemade recipe people are sharing on the page. When he clicks on them he is able to find ingredients and recipe for the pictures. Now Bob is able to recreate what the vegan dishes that looks delicious from the photos  and share them with his friends.
 </br>
 
-## #4
-Our UI has improved immensely compared to Milestone 4 in many ways. The most important change we made to the UI was adding more design to the profile page, which was essentially empty in Milestone 4. We added tabs for users' favorites and uploaded recipes that make it easy for users to navigate through. We've added an onclick function to the recipes in the home/recipe page for people to click on and pop up recipe steps.
 
 ### Latest UI Screenshots
 #### Home
@@ -31,7 +29,10 @@ Our UI has improved immensely compared to Milestone 4 in many ways. The most imp
 ![Profile 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile1.PNG)</br></br></br>
 ![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/profile2.PNG)</br></br>
 
+## #4
+Our UI has improved immensely compared to Milestone 4 in many ways. The most important change we made to the UI was adding more design to the profile page, which was essentially empty in Milestone 4. We added tabs for users' favorites and uploaded recipes that make it easy for users to navigate through. We've added an onclick function to the recipes in the home/recipe page for people to click on and pop up recipe steps.
 
+## #5
 
 ## #6
 For our data display, we ended up using MongoDB to store our user's information, such as posts, recipes uploaded, recipes saved, etc. We used node get/post requests in order to update and retrieve information from our database paired up with AJAX requests to display data without refreshing the page. For example, the search bar in the recipe page calls an AJAX request to a get request on the backend, which calls the database and retrieves JSON information. In order to store image effectively, we used GridFS to minimize cost/space of the pictures.
