@@ -1,7 +1,12 @@
 /* GENERAL CSS */
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     max-width: 100%;
     background-color: #f5f5f5;
+    
 }
 
 h1, h2, h3, h4, p, label, button, li, footer, a {
@@ -23,6 +28,21 @@ footer, a {
     color: white;
 }
 
+.add-recipe-button {
+    height:40px; 
+    width:80px; 
+    margin: 0px -50px; 
+    position:relative;
+    left:45%;
+}
+
+.delete-recipe-button {
+    height:40px; 
+    width:80px;
+    position: relative;
+    left: 55%;
+}
+
 .nav-text {
     font-family: 'Montserrat', sans-serif;
 }
@@ -33,7 +53,7 @@ footer, a {
 
 
 .nav-single:hover {
-    border-bottom: 2px solid currentColor;
+    border-bottom: 2px solid white;
     cursor: pointer;
 }
 
@@ -154,7 +174,7 @@ input[type=text], select {
     display: table-cell;
     text-align: left;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
 }
 
 .post-name {
@@ -209,8 +229,16 @@ input[type=text], select {
 
 }
 
-.post-comments {
+.post-comment {
+    width: 100%;
+    resize: none;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding: 5px 0px 0px 5px;
+}
 
+.post-comment:focus {
+    outline: none;
 }
 
 .comment-user-pic {
@@ -250,14 +278,48 @@ input[type=text], select {
     position: relative;
     font-weight: bold;
     padding: 5px 15px;
+    margin-bottom: 5px;
     color: white;
     background-color: #43d65e;
     border-color: transparent;
     border-radius: 100px;
+    float: right;
 }
 
 .comment-form {
     width: 90%;
     position: absolute;
     bottom: 0;
+}
+
+.recipe-hover {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    overflow: auto;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    display: -webkit-flex;
+}
+
+.recipe-hidden {
+    display: none !important;
+}
+
+.hide-single {
+    z-index: 1000;
+    color: black;
+    float: right;
+}
+
+.hide-single:hover {
+    cursor: pointer;
 }

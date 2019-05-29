@@ -69,125 +69,27 @@
         
         
             <div class="grid">
+                <% let i = 0; %>
                 <% posts.reverse().forEach(p => { %>
-                <div class="foodcontent">
-                    <img src="/image/<%=p.image.data%>" alt="Avatar" class="image" />
-                    <div class="middle">
-                        <div class='middle-content'>
-                            <h4><%= p.name %></h4>
-                            <%= p.body %>
+                    <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
+                        <% include ./partials/recipe-partial.ejs %>
+                    </div>
+                    <div class="foodcontent">
+                        <img src="/image/<%=p.image.data%>" alt="Avatar" class="image" />
+                        <div class="middle" onclick="show(<%=i++%>);">
+                            <div class='middle-content'>
+                                <h4><%= p.name %></h4>
+                                <%= p.body %>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <% }); %>
             </div>
         
 
         <div id='home-padding'></div>
 
-        
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Create a Recipe</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action='/upload' enctype="multipart/form-data" method="POST">
-                            <div class="form-group">
-                                <label for="name-text" class="col-form-label">Name</label>
-                                <input type="text" name="name" class="form-control" id="name-text"></input>
-                            </div>
-                            <div class="form-group">
-                                <input type="file" name="file" id="file">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message</label>
-                                <textarea name="message" class="form-control" id="message-text"></textarea>
-                            </div>
-                            <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Ingredients</label>
-                                    <input name="ingredients" type="text" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="form-group" id="recipe-form">
-                                <label for="recipe-text" class="col-form-label">Recipe Steps</label>
-                                <div id="instructions">
-                                    <input type="text" name="instructions[]">
-                                </div>
-                                <button class='btn btn-success add-recipe-button' type='button'><b>+</b></button>
-                                <button class='btn btn-danger delete-recipe-button' type='button'><b>-</b></button>
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Tags</label>
-                                <input name="tags" type="text" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="recipe-post-button btn btn-primary">Post</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class='all-posts'>
-            <% posts.reverse().forEach(p => { %>
-            <div class='post-container'>
-                <div class='post'>
-                    <div class='post-left'>
-                        <div class='image-container'>
-                            <img class='post-image' src="/image/<%=p.image.data%>" id='recipe-pic'/>
-                        </div>
-                    </div>
-                    <div class='post-right'>
-                        <img class='post-user-pic' src='/pics/user.png'>
-                        <h3 class=post-name><%= p.name %></h3>
-                        <div class='post-body'>
-                            <p><%= p.body %></p>
-                        </div>
-                        <div class='post-buttons'>
-                            <div class='post-button-entry'>
-                                    <button class='post-btn btn btn-light' type='submit'>&#9825;</button>
-                            </div>
-                            <div class='post-button-entry'>
-                                    <button class='post-btn btn btn-light' type='submit'>Share</button>
-                            </div>
-                            <div class='post-button-entry'>
-                                <form action='/<%= p._id %>/save' method="POST">
-                                    <button class='post-btn btn btn-light' type='submit'>Save</button>
-                                </form>
-                            </div>
-                    </div>
-                    <hr>
-                        <div class='post-comments'>
-                            <% if (p.comments.length === 0) { %>
-                                <p style='text-align: center; color: rgb(88, 88, 88)'>No comments.</p>
-                            <% } %>
-                            <% p.comments.forEach( (comment) => { %>
-                                <div class='comment-single'>
-                                    <img class='comment-user-pic' src='/pics/user.png'/>
-                                    <a class='comment-body'><%=comment.body%></a>
-                                </div>
-                            <%}); %>
-                        </div>
-                        <div class='comment-form'>
-                            <form action="/<%= p._id %>/comment" method="POST">
-                                <textarea class="post-comment" id="comment" name="comment" type="text" placeholder="Enter a comment"></textarea>
-                                <button class="comment-button">Reply</button>
-                            </form>
-                        </div>
-                  </div>
-            </div>
-        </div>
-        <% }); %>
-    </div>
-
-
-
+        <% include ./partials/upload.ejs %>
         <% include ./partials/footer.ejs %>
     </div>
 </body>

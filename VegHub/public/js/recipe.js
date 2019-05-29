@@ -8,23 +8,29 @@ $(document).ready(() => {
     var source = $("#recipe-query").html();
     var template = Handlebars.compile(source);
     var parentDiv = $("#query-list");
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams) {
+        $('#recipe-search-box').val(urlParams.get('search'));
+        setTimeout(function(){ $('#recipe-search-button').click()}, 100);
+
+    }
     $('#recipe-search-button').click(() => {
         if ($('#recipe-search-box').val().length !== 0) {
             $('#query-list').empty();
             $('.all-recipes').hide();
-            const search = '/recipe/search/' + $('#recipe-search-box').val();
+            // const search = '/recipe/search/' + $('#recipe-search-box').val();
+            const search = '/allRecipes';
+            const string = $('#recipe-search-box').val();
             $.ajax({
                 url: search,
                 type: 'GET',
                 dataType: 'json',
                 success: (data) => {
-                    // $('#search-box-img').attr('src', '/image/' + data.filename);
-                    // $('#search-box-img').attr('width', '400px');
-                    console.log(data[0])
                     for (var i = 0; i < data.length; i++) {
-                        var html = template(data[i]);
-                        console.log(html);
-                        parentDiv.append(html);
+                        if (data[i].name.toLowerCase().includes(string.toLowerCase())) {
+                            var html = template(data[i]);
+                            parentDiv.append(html);
+                        }
                     }
                 }
             });
@@ -37,9 +43,12 @@ $(document).ready(() => {
             $('.all-recipes').show();
         }
     });
-
-    $('.post-image').click(() => {
-        // console.log('clicked');
-        // $(this).parents().eq(2).find('#show-single-recipe').removeClass('recipe-hidden');
-    });
 });
+
+function show(i) {
+    $('.show-single-recipe' + i).removeClass('recipe-hidden');
+}
+
+function hide(i) {
+    $('.show-single-recipe' + i).addClass('recipe-hidden');
+}

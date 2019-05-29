@@ -7,7 +7,6 @@ const index = require('./routes/index');
 const recipe = require('./routes/recipe');
 const register = require('./routes/register');
 const profile = require('./routes/profile');
-const singleRecipe = require('./routes/singleRecipe');
 const URI = require('./keys/mongo');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
@@ -55,7 +54,6 @@ app.use('/', index.router);
 app.use('/recipe', recipe.router);
 app.use('/register', register.router);
 app.use('/profile', profile.router);
-app.use('/singleRecipe', singleRecipe.router);
 app.use('/register', register.router);
 
 //Global variables

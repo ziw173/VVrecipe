@@ -7,17 +7,19 @@
             </div>
             <div class='post-right'>
                 <img class='post-user-pic' src='/pics/user.png'>
+                <h2 class='hide-single' onclick='hide(<%=i%>)'>X</h2>
                 <h3 class=post-name><%= p.name %></h3>
+                
                 <div class='post-body'>
                     <p><%= p.body %></p>
                 </div>
                 <div class='post-buttons'>
-                    <div class='post-button-entry'>
+                    <!-- <div class='post-button-entry'>
                             <button class='post-btn btn btn-light' type='submit'>&#9825;</button>
                     </div>
                     <div class='post-button-entry'>
                             <button class='post-btn btn btn-light' type='submit'>Share</button>
-                    </div>
+                    </div> -->
                     <div class='post-button-entry'>
                         <form action='/<%= p._id %>/save' method="POST">
                             <button class='post-btn btn btn-light' type='submit'>Save</button>
