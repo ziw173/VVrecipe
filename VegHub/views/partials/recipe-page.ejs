@@ -6,13 +6,8 @@
                 </div>
             </div>
             <div class='post-right'>
-                <img class='post-user-pic' src='/pics/user.png'>
                 <h2 class='hide-single' onclick='hide(<%=i%>)'>X</h2>
                 <h3 class=post-name><%= p.name %></h3>
-                
-                <div class='post-body'>
-                    <p><%= p.body %></p>
-                </div>
                 <div class='post-buttons'>
                     <!-- <div class='post-button-entry'>
                             <button class='post-btn btn btn-light' type='submit'>&#9825;</button>
@@ -27,23 +22,13 @@
                     </div>
             </div>
             <hr>
-                <div class='post-comments'>
-                    <% if (p.comments.length === 0) { %>
-                        <p style='text-align: center; color: rgb(88, 88, 88)'>No comments.</p>
-                    <% } %>
-                    <% p.comments.forEach( (comment) => { %>
-                        <div class='comment-single'>
-                            <img class='comment-user-pic' src='/pics/user.png'/>
-                            <a class='comment-body'><%=comment.body%></a>
-                        </div>
-                    <%}); %>
-                </div>
-                <div class='comment-form'>
-                    <form action="/<%= p._id %>/comment" method="POST">
-                        <textarea class="post-comment" id="comment" name="comment" type="text" placeholder="Enter a comment"></textarea>
-                        <button class="comment-button">Reply</button>
-                    </form>
-                </div>
+            <ul class='recipe-steps'>
+                <% let s = 1; %>
+                <% p.recipe.forEach((step) => { %>
+                    <h4><%=s++%></h4>
+                    <li style='margin-bottom: 30px;'><%=step%></li>
+                <% }); %>
+            </ul>
           </div>
     </div>
   </div>

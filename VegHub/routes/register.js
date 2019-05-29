@@ -51,21 +51,22 @@ router.post('/register', function (req, res) {
 
 router.post('/login', (req, res) => {
     User.getUser(req.body.username, (err, user) => {
-        if (err) throw err;
+        console.log(user)
+        if (!user) {
+            res.redirect('/register');
+        } else {
+            User.comparePassword(req.body.password, user.password, (err, matches) => {
+                if (err) throw err;
 
-        if (!user) res.redirect('/');
-
-        User.comparePassword(req.body.password, user.password, (err, matches) => {
-            if (err) throw err;
-
-            if (matches) {
-                req.session.user = user;
-                console.log('successfully logged in');
-                res.redirect('/');
-            } else {
-                res.redirect('/register');
-            };
-        });
+                if (matches) {
+                    req.session.user = user;
+                    console.log('successfully logged in');
+                    res.redirect('/');
+                } else {
+                    res.redirect('/register');
+                };
+            });
+        }
     });
 });
 
