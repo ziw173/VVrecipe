@@ -14,7 +14,8 @@ Bob is looking over vegan food on Instagram and found some delicious looking foo
 
 ### Latest UI Screenshots
 #### Home
-Homescree
+On homescreen, we got rid of the carousel and implemenented just the grid images for the food. The food images are now clickable compare to milestone4 which wasn't. When the images are click, a bigger image will pop up and it includes the food description and recipe steps.
+
 ![Home 1](https://github.com/henrywuo/VegHub/blob/master/milestone5/home1.PNG)</br></br></br>
 ![Home 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/home2.png)</br></br></br>
 ![Home 3](https://github.com/henrywuo/VegHub/blob/master/milestone5/home3.PNG)</br></br>
