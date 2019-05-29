@@ -51,7 +51,6 @@ router.post('/register', function (req, res) {
 
 router.post('/login', (req, res) => {
     User.getUser(req.body.username, (err, user) => {
-        console.log(user)
         if (!user) {
             res.redirect('/register');
         } else {
