@@ -33,6 +33,9 @@ Bob is looking over vegan food on Instagram and found some delicious looking foo
 Our UI has improved immensely compared to Milestone 4 in many ways. The most important change we made to the UI was adding more design to the profile page, which was essentially empty in Milestone 4. We added tabs for users' favorites and uploaded recipes that make it easy for users to navigate through. We've added an onclick function to the recipes in the home/recipe page for people to click on and pop up recipe steps.
 
 ## #5
+![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/display1.PNG)</br></br>
+![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/display2.PNG)</br></br>
+![Profile 2](https://github.com/henrywuo/VegHub/blob/master/milestone5/display3.PNG)</br></br>
 
 ## #6
 For our data display, we ended up using MongoDB to store our user's information, such as posts, recipes uploaded, recipes saved, etc. We used node get/post requests in order to update and retrieve information from our database paired up with AJAX requests to display data without refreshing the page. For example, the search bar in the recipe page calls an AJAX request to a get request on the backend, which calls the database and retrieves JSON information. In order to store image effectively, we used GridFS to minimize cost/space of the pictures.
