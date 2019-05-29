@@ -22,96 +22,7 @@ html, body {
     left: 55%;
 }
 
-
-.checked {
-    color: orange;
-}
-
-.column {
-    flex: 33.33%;
-}
-
-.row {
-    border-style: hidden;
-    display: flex;
-    position: relative;
-}
-
-.image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-}
-
-.middle {
-    transition: .5s ease;
-    opacity: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(0%, -100%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: relative;
-}
-
-.text:hover {
-    opacity: 0.9;
-}
-
-
-.column:hover .middle {
-    opacity: 1;
-}
-
-.titles {
-    color: black;
-}
-
-.titles:hover {
-    text-decoration: none;
-
-}
-
-.text {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-}
-
-.previous {
-background-color: #f1f1f1;
-color: black;
-}
-
-.next {
-background-color: #4CAF50;
-color: white;
-}
-
-.round {
-border-radius: 50%;
-}
-
-/*Image Grid formatting*/
-/* .grid { 
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-    width: 1200px;
-}
-
-.grid img {
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-    width: 276px; 
-    height: 276px;
-    object-fit: cover;  
-    margin: 1px;
-} */
-
+/* Image Grid of Food*/
 .foodcontent{
     height: 276px;
     width: 276px;    
@@ -155,7 +66,7 @@ border-radius: 50%;
     opacity: 0;
     position: relative;
     top: -50%;
-    /* left: 50%; */
+    left: 50%;
     height: 100%;
     width: 100%;
     transform: translate(-50%, -50%);
@@ -176,3 +87,43 @@ border-radius: 50%;
     line-height: 1;
     margin:auto;
 }
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
