@@ -27,7 +27,7 @@
             <h2 style='text-align: center; padding-bottom: 20px;  '>{{name}}</h2>
             <div class='single-recipe-right-entry'>
               <h4 style='text-align: center;'>Ingredients</h4>
-              <ul>
+              <ul id='scrollbar'>
                 {{#each ingredients}}
                   <li>{{this}}</li>
                 {{/each}}
@@ -61,27 +61,18 @@
                       <img class='post-image' src="/image/<%=p.image.data%>"/>
                   </div>
               </div>
-              <%i++;%>
             <div class='single-recipe-right'>
               <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
-              <div class='single-recipe-right-entry'>
-                <h4 style='text-align: center;'>Ingredients</h4>
-                <ul>
+                <h3>Ingredients</h3>
+                <ul class='ingredients' id='scrollbar'>
                   <% p.ingredients[0].split(', ').forEach( (ing) => { %>
                       <li><%=ing%></li>
                   <% }); %>
                 </ul>
-              </div>
-              <!-- <div class='single-recipe-right-entry'>
-                  <h4 style='text-align: center;'>Recipe</h4>
-                  <ul class='recipe-list'>
-                    <% p.recipe.forEach( (s) => { %>
-                        <li><%=s%></li>
-                    <% }); %>
-                  </ul>
-              </div> -->
+                <button class='btn btn-info get-recipe-btn' onclick='show(<%=i%>)'>Get Recipe</button>
             </div>
           </div>
+          <%i++;%>
       <%})%>
     </div>
 

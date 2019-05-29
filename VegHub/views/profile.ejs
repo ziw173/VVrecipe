@@ -47,8 +47,8 @@
                     <% let i = 0; %>
                     <% saved.forEach( (p) => { %>
                         <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
-                            <% include ./partials/recipe-partial.ejs %>
-                        </div>
+                                <% include ./partials/recipe-page.ejs %>
+                            </div>
                         <img class='profile-recipe-image' src="/image/<%=p.image.data%>" onclick='show(<%=i%>)'/>
                         <% i++; %>
                     <% }); %>
@@ -56,8 +56,8 @@
                 <div class='profile-recipe' id='scrollbar'>
                     <% recipes.forEach( (p) => { %>
                         <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
-                            <% include ./partials/recipe-partial.ejs %>
-                        </div>
+                                <% include ./partials/recipe-page.ejs %>
+                            </div>
                         <img class='profile-recipe-image' src="/image/<%=p.image.data%>" onclick='show(<%=i%>)'/>
                         <% i++; %>
                     <% }); %>

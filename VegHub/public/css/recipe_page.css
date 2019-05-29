@@ -65,16 +65,9 @@ img {
     display: table-cell;
     text-align: left;
     background-color: white;
-    max-height: 500px;
+    max-height: 540px;
     padding: 20px 20px 5px 20px;
-}
-
-.single-recipe-right-entry {
-    height: 100%;
-    width: 50%;
-    float: left;
-    max-height: 350px;
-    overflow-y: scroll;
+    text-align: center;
 }
 
 .post-image {
@@ -130,4 +123,13 @@ img {
     padding: 10px;
     overflow-y: scroll;
     list-style-type: none;
+}
+
+.ingredients {
+    list-style-type: none;
+    padding: 0;
+}
+
+.get-recipe-btn {
+    bottom: 5px;
 }
