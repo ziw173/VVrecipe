@@ -23,13 +23,13 @@ function hide(i) {
     $('.show-single-recipe' + i).addClass('recipe-hidden');
 }
 
-function showIngredients(i) {
-    $('.show-single-recipe' + i).removeClass('recipe-hidden');
-    $('.show-single-ingredients' + i).removeClass('recipe-hidden');
+// function showIngredients(i) {
+//     $('.show-single-recipe' + i).removeClass('recipe-hidden');
+//     $('.show-single-ingredients' + i).removeClass('recipe-hidden');
 
-}
+// }
 
-function hideIngredients(i) {
-    $('.show-single-recipe' + i).addClass('recipe-hidden');
-    $('.show-single-ingredients' + i).addClass('recipe-hidden');
-}
+// function hideIngredients(i) {
+//     $('.show-single-recipe' + i).addClass('recipe-hidden');
+//     $('.show-single-ingredients' + i).addClass('recipe-hidden');
+// }
