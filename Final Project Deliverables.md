@@ -46,7 +46,7 @@ Contribution
 * VegHub/VegHub/views/partials/navbar.ejs
 <br>navigation bar shows all the important features of our web app.</br>
 * VegHub/VegHub/views/partials/recipe-page.ejs
-<br><creates recipe buttons/br>
+<br>creates recipe buttons</br>
 * VegHub/VegHub/views/partials/recipe-partial.ejs
 <br>shows all the recipes</br>
 * VegHub/VegHub/views/partials/upload.ejs
