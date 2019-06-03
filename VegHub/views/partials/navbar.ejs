@@ -27,19 +27,15 @@
           
           <span class="navbar-text">
             
-              <!-- <form class="example" >
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form> -->
+              
               <form action='/search' method='POST'>
                 <div class='search-recipe'>
                     <input id="search-box" name="query" type="text" size="20" />
-                    <button type="submit" id="recipe-button">Search Food</button>
+                    <button type="submit" id="recipe-button"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
               </form> 
             <% if (!user) { %>
-              <button onclick='location.href="register"'>Log In</button>
-              <button onclick='location.href="register"' style='margin-right: 40px;'>Sign Up</button>
+              <button onclick='location.href="register"' style='margin-right: 40px;'>Sign in</button>
             <% } else { %>
               <h3 onclick="window.location.href='/profile'" style='cursor: pointer;'><%=user%></h3>
               <a class='nav-link' href='/profile/logout'>Logout</a>
