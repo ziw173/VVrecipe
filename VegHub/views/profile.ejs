@@ -1,4 +1,8 @@
 <!-- profile.ejs -->
+
+<!-- Creates the webpage for the profile for users of our webpage. 
+    Within the profile is are all the recipe the user uploaded and the recipe favorite by the user -->
+
 <html>
     <head>
         <% include ./partials/header.ejs %>
@@ -33,15 +37,7 @@
                 </div>
             </div>
             
-            <!-- <div class='profile-section'>
-                <h4>My Recipes</h4>
-                <div class='profile-recipe'>
-                    <% recipes.forEach((r) => { %>
-                        <img class='profile-recipe-image' src="/image/<%=r.image.data%>"/>
-                    <% }); %>
-                </div>
-
-             </div> -->
+            
             <div class='col-md-7 ml-auto mr-auto profile-section'>
                 <div class='profile-saved' id='scrollbar' style='display: none'>
                     <% let i = 0; %>

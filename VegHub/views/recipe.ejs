@@ -1,4 +1,8 @@
 <!-- recipe.ejs -->
+
+<!-- Creates the recipe pages. The recipe page is different to the homepage in that it is the place where all the recipe is contain
+  vs the home page where it will only show the most recent recipe posted by users. The recipe page also shows the ingrediants and steps to make the food. -->
+
 <html>
     <head>
         <% include ./partials/header.ejs %>
@@ -33,14 +37,6 @@
                 {{/each}}
               </ul>
             </div>
-            <!-- <div class='single-recipe-right-entry'>
-                <h4 style='text-align: center;'>Recipe</h4>
-                <ul>
-                  {{#each recipe}}
-                    <li>{{this}}</li>
-                  {{/each}}
-                </ul>
-            </div> -->
           </div>
         </div>
       </script>
